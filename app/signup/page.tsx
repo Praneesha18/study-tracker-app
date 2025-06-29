@@ -55,7 +55,7 @@ export default function SignupPage() {
         password: "",
         comparePassword: "",
       });
-      router.push("/");
+     window.location.href = '/'; 
     } catch (err: any) {
       console.error("Signup error:", err?.response?.data || err.message);
       setErrormsg(err?.response?.data?.error || {});

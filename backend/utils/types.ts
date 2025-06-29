@@ -10,11 +10,17 @@ export type Subjects ={
   imageurl:string;
   topics: Topic[];
 }
+export type userTopic={
+  _id:string,
+   title: string;
+  description: string;
+  progress: boolean;
 
+}
 export type  UserSubjectSchema={
   subject_Id:string;
   name:string;
-  topics:Topic[];
+  topics:userTopic[];
   subjectLevel:Number
 }
 

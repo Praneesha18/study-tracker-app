@@ -58,11 +58,13 @@ export default function SubjectDetailPage() {
       }
 
       if (fetchedSubjects.length === 0) {
-        await axios.post("/api/usersubjects/userenroll", { sub_Id: id });
+        const res=await axios.post("/api/usersubjects/userenroll", { sub_Id: id });
         toast.success("Successfully enrolled! 🚀");
+        console.log(res)
       } else {
-        await axios.patch("/api/usersubjects/userenroll", { sub_Id: id });
+       const res= await axios.patch("/api/usersubjects/userenroll", { sub_Id: id });
         toast.success("Successfully added to your subjects! 🎉");
+        console.log(res)
       }
 
       setIsAlreadyEnrolled(true);
@@ -133,7 +135,7 @@ export default function SubjectDetailPage() {
         {isAlreadyEnrolled ? (
           <Button
             text="See Progress"
-            onClick={() => router.push(`/dashboard`)}
+             onClick={() => router.push(`/dashboard`)}
           />
         ) : (
           <Button

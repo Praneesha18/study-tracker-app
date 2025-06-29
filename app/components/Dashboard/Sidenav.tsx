@@ -25,7 +25,7 @@ const Sidenav = () => {
     <div className="min-h-screen flex flex-col md:flex-row">
       {/* Mobile Nav Toggle */}
       <div className="md:hidden flex justify-between items-center px-4 py-3 bg-secondary text-white">
-        <h1 className="text-xl font-bold">📘 Study Tracker</h1>
+        <h1 className="text-xl font-bold">Study Tracker</h1>
         <button
           onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
           className="text-2xl"

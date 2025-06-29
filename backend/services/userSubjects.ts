@@ -3,17 +3,7 @@ import { UserSubjects } from "../models/UserSubjects"
 
 
 
-export async function enrollUserInSubject(userId: string, subjectData: any) {
-  return await UserSubjects.updateOne(
-    { user_Id: userId },
-    {
-      $push: {
-        userSubjects: subjectData
-      }
-    },
-    { upsert: true }
-  );
-}
+
 
 // optional: get userSubjects by userId (you probably already have this)
 export async function getUserSubjectsbyId(userId: string) {
@@ -27,6 +17,7 @@ export async function patchUserSubject(userId:string,subId:string){
   }
  
      const topicProgress = subject.topics.map((topic: any) => ({
+      _id:topic._id,
       title: topic.title,
       description: topic.description,
       progress: false
@@ -56,6 +47,7 @@ export async function postUser(userId:string,subId:string) {
     }
 
        const topicProgress = subject.topics.map((topic: any) => ({
+      _id:topic._id,
       title: topic.title,
       description: topic.description,
       progress: false

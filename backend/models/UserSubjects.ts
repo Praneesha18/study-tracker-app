@@ -2,6 +2,7 @@ import mongoose, { mongo } from "mongoose";
 import { ISubjectSchema } from "./SubjectandTopic";
 
 export interface IUserTopicProgress {
+  _id:mongoose.Types.ObjectId;
   title: string;
   description: string;
   progress: boolean;
@@ -21,6 +22,11 @@ export interface IUserSubjectsAndProgressSchema extends mongoose.Document {
 
 
 const TopicProgressSchema = new mongoose.Schema({
+  _id:{
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+
+  },
   title: {
     type: String,
     required: true,
@@ -33,7 +39,8 @@ const TopicProgressSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
-});
+
+} , { _id: false });
 
 const UserSubjectSchema = new mongoose.Schema({
   subject_Id: {
