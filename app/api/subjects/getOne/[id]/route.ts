@@ -4,7 +4,8 @@ import { getSubjectByIdController } from "@/backend/controllers/subjects/subject
 
 export async function GET(
   req: NextRequest,
-  { params }: { params: { id: string } }
+ { params }: { params: Promise<{ id: string }> }
 ) {
-  return getSubjectByIdController(req, params.id);
+   const id = (await params).id; 
+  return getSubjectByIdController(req, id);
 }
