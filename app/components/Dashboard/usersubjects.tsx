@@ -9,7 +9,7 @@ import {
   FaChevronDown,
   FaChevronUp,
 } from 'react-icons/fa';
-import { UserSubjectSchema } from '@/backend/utils/types';
+import { Topic, UserSubjectSchema } from '@/backend/utils/types';
 
 export default function Usersubjects() {
   const [subjects, setSubjects] = useState<UserSubjectSchema[]>([]);
@@ -27,9 +27,9 @@ export default function Usersubjects() {
 
         // Initialize localProgress from server data
         const initial: Record<string, Set<string>> = {};
-        fetched.forEach(sub => {
+        fetched.forEach((sub:UserSubjectSchema) => {
           initial[sub.subject_Id] = new Set(
-            sub.topics.filter(t => t.progress).map(t => t.title)
+            sub.topics.filter((t:Topic) => t.progress).map(t => t.title)
           );
         });
         setLocalProgress(initial);
