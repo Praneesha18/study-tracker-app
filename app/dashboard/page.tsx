@@ -12,7 +12,7 @@ const DashboardPage = async () => {
  if (!session.user) {
   return (
     <div>
-      <Webnav />
+      
       <div className="flex items-center justify-center h-[80vh]">
         <div className="shadow-lg  h-1/2  flex flex-col justify-center items-center rounded-lg p-6 max-w-xl w-full text-center space-y-8">
           <h2 className="text-3xl font-semibold text-secondary">
