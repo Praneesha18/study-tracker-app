@@ -6,23 +6,23 @@
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-38B2AC?logo=tailwind-css&logoColor=white)
 
 A **full-stack study tracking app** built with Next.js, TypeScript, MongoDB & Tailwind CSS.  
-Track your subjects, exams, assignments and get smart reminders.
+Track your subjects, exams, and get smart reminders.
 
 ---
 
 ## ✨ Features
 
-- ✅ User authentication & session management
-- ✅ Add, edit, delete subjects & exams
-- ✅ Upcoming vs finished exams with validation
-- ✅ Smart reminders for outdated exams
-- ✅ Beautiful responsive UI
-- ✅ Toast notifications for user feedback
-- 📊 Dashboard & progress statistics _(planned)_
+-  User authentication & session management
+-  add, edit, delete subjects & exams
+-  Upcoming vs finished exams with validation
+-  Smart reminders for outdated exams
+-  Beautiful responsive UI
+-  Toast notifications for user feedback
+-  Dashboard & progress statistics _(planned)_
 
 ---
 
-## 🛠 Tech Stack
+##  Tech Stack
 
 - Next.js (App Router)
 - TypeScript
@@ -31,30 +31,44 @@ Track your subjects, exams, assignments and get smart reminders.
 - Axios
 - Lucide / React Icons
 - React Toastify
+- ide-vscode
+
 
 ---
 
-## 📦 Folder Structure
+##  Folder Structure
 
 ```plaintext
 /app
  ├── api                # API routes (auth, exams, subjects)
  ├── components         # Reusable UI components
  ├── (auth)             # Login & signup pages
- ├── (dashboard)        # Protected pages (subjects, exams)
  ├── lib                # Session & helper utilities
 /backend
  ├── controllers        # API controllers
  ├── models             # Mongoose schemas
  ├── services           # Business logic & validation
+ ├── lib                #connecting to db
 /styles                 # Tailwind & global CSS
 /public                 # Static assets
 
-git clone https://github.com/your-username/study-tracker.git
-cd study-tracker
+---
+```
+## Installation
+
+git clone https://github.com/Praneesha18/study-tracker-app.git
+cd study-tracker-app
 npm install
+
+---
+
+## environment variables
 
 MONGO_URL=your-mongodb-url
 NEXTAUTH_SECRET=your-secret-key
+
+---
+
+##  To Run Locally (Development)
 
 npm run dev
