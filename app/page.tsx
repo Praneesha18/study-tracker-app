@@ -11,7 +11,7 @@ export default function Home() {
 
 
       {/* Hero Section */}
-      <section className="text-white py-20  px-4 text-center">
+      <section className=" py-20  px-4 text-center">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
           Welcome to Study Tracker
         </h1>

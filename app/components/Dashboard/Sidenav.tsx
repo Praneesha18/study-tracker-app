@@ -2,10 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Stats from "./stats";
 import UserExams from "./userexams";
 import UserSubjects from "./usersubjects";
+
+
+
 
 const Sidenav = () => {
   const pathname = usePathname();
@@ -18,6 +21,7 @@ const Sidenav = () => {
     { label: "Your Exams", component: <UserExams />, icon: "📝" },
   ];
 
+  
   const selectedComponent =
     navItems.find((item) => item.label === selectedTab)?.component || <Stats />;
 
@@ -28,7 +32,8 @@ const Sidenav = () => {
         <h1 className="text-xl font-bold">Study Tracker</h1>
         <button
           onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
-          className="text-2xl"
+          className="text-2xl cursor-pointer"
+          
         >
           {isMobileNavOpen ? "✖" : "☰"}
         </button>

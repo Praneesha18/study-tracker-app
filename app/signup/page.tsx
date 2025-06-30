@@ -43,6 +43,7 @@ export default function SignupPage() {
 
   const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault();
+     setErrormsg({})
     try {
       const response = await axios.post("/api/auth/signup", form);
       console.log("Signup successful:", response.data);
@@ -80,7 +81,7 @@ export default function SignupPage() {
           <div>
             <label
               htmlFor="name"
-              className="block text-sm font-medium text-gray-200 mb-1"
+              className="block text-sm font-medium text-secondary mb-1"
             >
              * Name
             </label>
@@ -101,7 +102,7 @@ export default function SignupPage() {
           <div>
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-gray-200 mb-1"
+              className="block text-sm font-medium text-secondary mb-1"
             >
              * Email
             </label>
@@ -127,7 +128,7 @@ export default function SignupPage() {
           <div>
             <label
               htmlFor="age"
-              className="block text-sm font-medium text-gray-200 mb-1"
+              className="block text-sm font-medium text-secondary mb-1"
             >
              * Age
             </label>
@@ -148,24 +149,24 @@ export default function SignupPage() {
           <div>
             <label
               htmlFor="yearofstudy"
-              className="block text-sm font-medium text-gray-200 mb-1"
+              className="block text-sm font-medium text-secondary mb-1"
             >
              * Year of Study
             </label>
             <select
-              name="yearofstudy"
-              className="w-full px-4 py-2 border border-gray-300 rounded-md text-secondary"
-              value={form.yearofstudy}
-              onChange={handleChange}
-            >
-              <option value="" disabled>
-                Select your year
-              </option>
-              <option value="B.Tech 1st Year">B.Tech 1st Year</option>
-              <option value="B.Tech 2nd Year">B.Tech 2nd Year</option>
-              <option value="B.Tech 3rd Year">B.Tech 3rd Year</option>
-              <option value="B.Tech 4th Year">B.Tech 4th Year</option>
-            </select>
+  name="yearofstudy"
+  className="w-full px-4 py-2 border border-gray-300 rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
+  value={form.yearofstudy}
+  onChange={handleChange}
+>
+  <option value="" disabled>
+    Select your year
+  </option>
+  <option value="1">1st Year</option>
+  <option value="2">2nd Year</option>
+  <option value="3">3rd Year</option>
+  <option value="4">4th Year</option>
+</select>
             {errormsg.yearofstudy && (
               <div className="text-error text-sm">{errormsg.yearofstudy}</div>
             )}
@@ -175,7 +176,7 @@ export default function SignupPage() {
           <div>
             <label
               htmlFor="password"
-              className="block text-sm font-medium text-gray-200 mb-1"
+              className="block text-sm font-medium text-secondary mb-1"
             >
              * Password
             </label>
@@ -205,7 +206,7 @@ export default function SignupPage() {
           <div>
             <label
               htmlFor="comparePassword"
-              className="block text-sm font-medium text-gray-200 mb-1"
+              className="block text-sm font-medium text-secondary mb-1"
             >
              * Confirm Password
             </label>
@@ -235,7 +236,7 @@ export default function SignupPage() {
 
           <button
             type="submit"
-            className="w-full bg-[var(--secondary)] text-white py-2 rounded-md font-semibold hover:bg-[var(--primary)] transition"
+            className="w-full bg-[var(--secondary)] cursor-pointer text-white py-2 rounded-md font-semibold hover:bg-[var(--primary)] transition"
           >
             Sign Up
           </button>

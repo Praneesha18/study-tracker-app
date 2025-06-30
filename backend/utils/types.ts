@@ -24,6 +24,19 @@ export type  UserSubjectSchema={
   subjectLevel:Number
 }
 
+export type UserExams={
+  _id:string;
+  name:string;
+  subject:string;
+  date:string;
+  marksscored:number;
+  totalmarks:number;
+  notes:string;
+  status:"upcoming"|"finished"
+
+
+}
+
 export type UserSubjects={
    user_Id:string,
    userSubjects:UserSubjectSchema[]

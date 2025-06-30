@@ -64,7 +64,7 @@ export default function Usersubjects() {
   };
 
   return (
-    <section className="py-5 max-w-6xl mx-auto">
+    <section id="subjects" className="py-5 max-w-6xl mx-auto">
       <h2 className="text-3xl font-bold text-center mb-10 text-secondary">Your Subjects</h2>
 
       {loading ? (
@@ -138,7 +138,7 @@ export default function Usersubjects() {
                     {/* Footer buttons */}
                     <div className="w-full flex items-center justify-center p-5 gap-3">
                       <div className="w-full md:w-1/2 flex gap-3">
-                        <Link href={`/subjects/${subject.subject_Id}/progress`} className="flex-1">
+                        <Link href={`/dashboard/#stats`} className="flex-1">
                           <button className="flex items-center justify-center gap-2 w-full bg-primary text-white py-2 rounded-md text-sm font-medium hover:scale-105 transition">
                             <FaChartLine /> See Progress
                           </button>

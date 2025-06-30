@@ -32,7 +32,7 @@ export default function LoginPage() {
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-
+     setErrormsg({})
     try {
       const response = await axios.post("/api/auth/login", form);
       console.log("Login successful:", response.data);
@@ -67,7 +67,7 @@ export default function LoginPage() {
           <div>
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-gray-200 mb-1"
+              className="block text-sm font-medium text-secondary mb-1"
             >
              * Email
             </label>
@@ -90,7 +90,7 @@ export default function LoginPage() {
           <div>
             <label
               htmlFor="password"
-              className="block text-sm font-medium text-gray-200 mb-1"
+              className="block text-sm font-medium text-secondary mb-1"
             >
               * Password
             </label>
@@ -106,7 +106,7 @@ export default function LoginPage() {
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"
+                className="absolute cursor-pointer right-3 top-1/2 transform -translate-y-1/2 text-gray-500"
               >
                 {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
               </button>
@@ -119,7 +119,7 @@ export default function LoginPage() {
           {/* Login Button */}
           <button
             type="submit"
-            className="w-full bg-[var(--secondary)] text-white py-2 rounded-md font-semibold hover:bg-[var(--primary)] transition"
+            className="w-full cursor-pointer bg-[var(--secondary)] text-white py-2 rounded-md font-semibold hover:bg-[var(--primary)] transition"
           >
             Login
           </button>

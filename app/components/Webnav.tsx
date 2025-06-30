@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import Button from './button';
 import ProfileMenu from './Profilemenu';
 
@@ -10,6 +11,8 @@ interface WebnavProps {
 }
 
 export default function Webnav({ user }: WebnavProps) {
+  const pathname = usePathname();
+
   return (
     <nav className="bg-background shadow-sm sticky top-0 z-50">
       <div className="max-w-6xl mx-auto flex justify-between items-center px-4 sm:px-6 py-4">
@@ -19,15 +22,27 @@ export default function Webnav({ user }: WebnavProps) {
           </span>
         </Link>
 
-        <ul className="flex items-center space-x-4 sm:space-x-6 text-base font-sm md:font-medium ">
+        <ul className="flex items-center space-x-4 sm:space-x-6 text-base font-sm md:font-medium">
           <li>
             <Link href="/">
-              <span className="cursor-pointer hover:text-primary transition-colors">Home</span>
+              <span
+                className={`cursor-pointer transition-colors hover:text-primary ${
+                  pathname === '/' ? 'text-secondary' : ''
+                }`}
+              >
+                Home
+              </span>
             </Link>
           </li>
           <li>
             <Link href="/dashboard">
-              <span className="cursor-pointer hover:text-primary transition-colors">Dashboard</span>
+              <span
+                className={`cursor-pointer transition-colors hover:text-primary ${
+                  pathname.startsWith('/dashboard') ? 'text-secondary' : ''
+                }`}
+              >
+                Dashboard
+              </span>
             </Link>
           </li>
           <li>
