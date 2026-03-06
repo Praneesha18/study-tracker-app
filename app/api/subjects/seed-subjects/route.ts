@@ -8,6 +8,7 @@ export async function GET() {
   const subjects = [
     {
       name: "Machine Learning",
+      imageurl :"https://media.geeksforgeeks.org/wp-content/uploads/20240801112223/Machine-Learning-Roadmap-copy.webp",
       topics: [
         { title: "Supervised Learning", description: "A type of machine learning where models are trained on labeled data. Algorithms learn to map input data to the correct output using known examples. Common algorithms include linear regression, logistic regression, and support vector machines.", progress: false },
         { title: "Unsupervised Learning", description: "In this approach, the algorithm works with unlabeled data. It tries to uncover hidden patterns or groupings without explicit outputs. Popular techniques include clustering and dimensionality reduction.", progress: false },
@@ -31,9 +32,11 @@ export async function GET() {
         { title: "Hyperparameter Tuning", description: "The process of selecting the best set of hyperparameters using techniques like grid search, random search, and Bayesian optimization.", progress: false },
         { title: "Cross-Validation", description: "A model validation technique that divides the dataset into multiple folds and trains/testing across combinations to ensure generalization.", progress: false },
       ],
+
     },
     {
       name: "Data Structures and Algorithms",
+      imageurl:"https://pbs.twimg.com/media/GoTqkCnXMAA42q3.png",
       topics: [
         { title: "Arrays", description: "A fundamental data structure that stores elements in contiguous memory locations. Supports random access but fixed size.", progress: false },
         { title: "Linked Lists", description: "A linear data structure where elements (nodes) are linked using pointers. Includes singly, doubly, and circular linked lists.", progress: false },
